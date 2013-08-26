@@ -1,0 +1,371 @@
+/* ==========================================================================
+   Fonts
+   ========================================================================== */
+@import url(http://fonts.googleapis.com/css?family=Lato:400);
+
+/*fontello base icons*/
+@font-face {
+  font-family: 'fontello';
+  src: url('fonts/fontello.eot?78972571');
+  src: url('fonts/fontello.eot?78972571#iefix') format('embedded-opentype'),
+       url('fonts/fontello.woff?78972571') format('woff'),
+       url('fonts/fontello.ttf?78972571') format('truetype'),
+       url('fonts/fontello.svg?78972571#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?78972571#fontello') format('svg');
+  }
+}
+*/
+ 
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+     
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.icon-ok:before { content: '\e804'; } /* '' */
+.icon-check:before { content: '\e805'; } /* '' */
+.icon-download-outline:before { content: '\e80a'; } /* '' */
+.icon-pause-outline:before { content: '\e803'; } /* '' */
+.icon-pause:before { content: '\e802'; } /* '' */
+.icon-play-outline:before { content: '\e808'; } /* '' */
+.icon-play:before { content: '\e809'; } /* '' */
+.icon-block:before { content: '\e80d'; } /* '' */
+.icon-plus:before { content: '\e80c'; } /* '' */
+.icon-stopwatch:before { content: '\e807'; } /* '' */
+.icon-cancel:before { content: '\e801'; } /* '' */
+.icon-gauge:before { content: '\e800'; } /* '' */
+.icon-download:before { content: '\e80b'; } /* '' */
+.icon-clock:before { content: '\e806'; } /* '' */
+
+/* ==========================================================================
+   General
+   ========================================================================== */
+.HTML5Uploader {
+    font-family: 'Lato', sans-serif;
+    color: #2C3E50;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    letter-spacing: 0.4px;
+}
+
+.HTML5Uploader .upload-wrapper {
+   width: 500px;
+   margin: 100px auto;
+}
+
+/* ==========================================================================
+   Dropzone
+   ========================================================================== */
+
+.HTML5Uploader .drop-wrapper {
+    width: 74%;
+    min-width: 500px;
+    max-width: 1000px;
+    margin: 100px auto;
+}
+
+.HTML5Uploader .dropzone {
+    padding: 30px 50px 100px 50px;
+    margin-bottom: 50px;
+    border: 5px dashed #d6d6d6;
+    text-align: center;
+}
+
+.HTML5Uploader .dropzone h1 {
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: bold;
+    color: #858585;
+}
+
+.HTML5Uploader .dropzone button {
+    text-transform: none;
+    font-weight: normal;
+    font-size: 14px;
+    background-color: #505050;
+}
+
+/* ==========================================================================
+   Speed/time Info 
+   ========================================================================== */
+.HTML5Uploader .info-wrapper {
+    display: none;
+    margin-bottom: 20px;
+}
+
+.HTML5Uploader .speed-info {
+    margin-top: 2px; 
+    float: right; 
+    border-radius: 5px; 
+    background-color: #f3f3f5;
+    border: 1px solid #e2e2e9;
+    padding: 4px 11px;
+}
+
+.HTML5Uploader .time-info {
+    margin-top: 2px;
+    margin-left: 18px;
+    float: right; 
+    border-radius: 5px; 
+    background-color: #f3f3f5;
+    border: 1px solid #e2e2e9;
+    padding: 4px 11px;
+}
+
+
+/* ==========================================================================
+   Files | aka preview
+   ========================================================================== */
+.HTML5Uploader .files {
+    list-style: none;
+    padding: 0;
+} 
+
+.HTML5Uploader .files li {
+    margin-bottom: 30px;
+    padding: 13px 15px 30px 20px;
+    background-color: #f3f3f5;
+    border: 1px solid #e2e2e9;
+    border-radius: 5px;
+    position: relative;
+}
+
+.HTML5Uploader .files .first {
+    margin-bottom: 1.15em;
+}
+
+.HTML5Uploader .files .first .top {
+    color: #000;
+}
+
+.HTML5Uploader .files .first .icon-download {
+    color: #5C5C5C;
+}
+
+.HTML5Uploader .files .first .download-link {
+    display: none;
+}
+
+.HTML5Uploader .files .first .pause {
+    float: right;
+    font-size: 1.3em;
+    cursor: pointer;
+    display:  none;
+}
+
+.HTML5Uploader .files .first .error {
+    color: #b80000;
+    margin-top: 0.4em;
+    font-family: 'Trebuchet MS';
+    font-weight: bold;
+}
+
+.HTML5Uploader .files .first .cancel-single {
+    float: right;
+    font-size: 1.3em;
+    margin-left: 13px;
+    cursor: pointer;
+    opacity: 0.3;
+}
+
+.HTML5Uploader .files .first .cancel-single:hover {
+    opacity: 0.8;
+}
+
+.HTML5Uploader .files .second .filesize {
+    display: block;
+    float: left;
+    line-height: 6px;
+    margin-right: 18px;
+    font-size: 0.9em;
+    color: #838383;
+}
+
+.HTML5Uploader .files .second .progress-wrap {
+    float: left;
+}
+
+.HTML5Uploader .success-tick {
+    position: absolute;
+    display: none;
+    font-size: 2.1em; 
+    color: #26A04D;
+    top: 33px;
+    right: 23px;
+}
+
+.HTML5Uploader .add-more {
+    width: 20px;
+    height: 25px;
+    padding: 5px 10px;
+    background-color: #eaeaea;
+    border: 1px solid #d8d8de;
+    cursor: pointer;
+    border-radius: 3px;
+    opacity: 0.6;
+    color: #2C3E50;
+    font-size: 1.1em;
+    overflow: hidden;
+    margin: 0 auto;
+
+    -webkit-transition: all .17s ease;
+       -moz-transition: all .17s ease;
+        -ms-transition: all .17s ease;
+         -o-transition: all .17s ease;
+            transition: all .17s ease;
+    
+}
+
+.HTML5Uploader .add-more:hover {
+    width: 135px;
+    color: #1f2b38;
+
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+.HTML5Uploader button, .HTML5Uploader .button {
+    padding: 10px 22px;
+    color: #FFF;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 3px;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 1;
+    border: none;
+    font-family: 'Lato', sans-serif;
+
+    -webkit-transition: all .10s ease;
+       -moz-transition: all .10s ease;
+        -ms-transition: all .10s ease;
+         -o-transition: all .10s ease;
+            transition: all .10s ease;
+}
+
+.HTML5Uploader button:hover, .HTML5Uploader .button:hover {
+    background-color: #F77872;
+}
+
+.HTML5Uploader .gray {
+    background-color: #6B6868;
+}
+
+.HTML5Uploader .gray:hover {
+ background-color: #7B7878;   
+}
+
+.HTML5Uploader .pinkish {
+    background-color: #FF6760;
+}
+
+.HTML5Uploader .pinkish:hover {
+    background-color: #F77872;
+}
+
+/* ==========================================================================
+   Progressbar
+   ========================================================================== */
+.HTML5Uploader .progress-wrap {
+    width: 300px;
+}
+
+.HTML5Uploader .progress {
+    height: 7px;
+    background-color: #dedede;
+    border-radius: 32px;
+    overflow: hidden;
+}
+
+.HTML5Uploader .bar {
+    background-color: #616161;
+    float: left;
+    height: 100%;
+
+    -webkit-transition: width .6s ease;
+       -moz-transition: width .6s ease;
+        -ms-transition: width .6s ease;
+         -o-transition: width .6s ease;
+            transition: width .6s ease;
+}
+
+.HTML5Uploader .progress-static {
+    vertical-align: top;
+}
+/* ==========================================================================
+file input, we hide this file input, really hacky, but IE not working with programmable fileinput onclick invocation..
+   ========================================================================== */
+.HTML5Uploader .fileinput-button {
+    position: relative;
+    overflow: hidden;
+}
+
+.HTML5Uploader .fileinput-button input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    font-size: 24px;
+    direction: ltr;
+    cursor: pointer;
+}
+
+.HTML5Uploader .add-more-button {
+
+}
+
+
+
+
+/* ==========================================================================
+   Helper Classes (HTML5Uploader)
+   ========================================================================== */
+.HTML5Uploader .hidden {
+   display: none !important;
+   visibility: hidden;
+}
+
+.HTML5Uploader .clear {
+    clear:both;
+}
+
+.HTML5Uploader .relative {
+    position: relative;
+}

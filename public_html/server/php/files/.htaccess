@@ -1,0 +1,15 @@
+# The following directives force the Content-Type
+# "application/octet-stream" for all files
+# This prevents executing any uploaded scripts
+# and forces a download dialog
+# This is IMPORTANT
+ForceType application/octet-stream
+Header set Content-Disposition attachment
+
+# Prevent IE from MIME-sniffing:
+Header set X-Content-Type-Options "nosniff"
+
+# Uncomment the following lines to prevent unauthorized download of files:
+#AuthName "Authorization required"
+#AuthType Basic
+#require valid-user

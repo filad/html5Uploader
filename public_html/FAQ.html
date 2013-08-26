@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5|Uploader</title>
+    <link rel="stylesheet" href="/assets/css/normalize.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/assets/css/HTML5Uploader/defaultTheme.css">
+</head>
+<body>  
+    <header>
+        <div class="inner clearfix">
+            <div class="logo">
+                <a href="/">
+                    <img src="/assets/img/light-3.png" alt="">
+                </a>
+            </div>
+            
+
+            <!-- Begin Menu -->
+            <nav id="menu" class="menu">
+                <ul id="tiny">
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="FAQ.html">FAQ</a></li>
+                    <li><a href="download.html">Download</a></li>
+                </ul>
+            </nav>
+            <!-- End Menu -->
+        </div>
+    </header>
+	<div class="faq inner">
+        <h2 class="aligncenter">FAQ / Documentation</h2>
+        <span class="description aligncenter">HTML5Uploader is a file upload script with resumable 
+            feature and MySQL backend support</span> 
+        <h3>What is this?</h3>
+        <p>
+            This is a file upload script.<br>
+            You can find it's <a href="">!!!!!!!!!!!!!!!source code on GitHub</a>.
+        </p>
+        <p>
+            I needed a script which is resumable by default, easily customizable (you can make 'themes') 
+            and has a MySQL backend. <br>
+            So I combined the powerful <a href="https://github.com/blueimp/jQuery-File-Upload">jQuery-File-Upload plugin</a> with my own ideas.   
+            <br>Now I share it here. 
+        </p>
+        <p>
+            Some basics about this uploader: <br>
+            Only Javascript is used on the client side, no Flash or Java is required. <br>
+        </p>
+        <p>
+            All uploads are resumable (by default) which means you don't have to restart the whole uploading process after a connection loss, just drop the same files again and continue where you left. 
+            <br>
+            To try it, drop a bigger file or files, start upload, 
+            then - during uploading - close your browser, 
+            your upload will continue when you start it again. <br>
+            In case of older browsers, it will fallback to the old method 
+            (it will upload the files in one big chunk).
+        </p>
+        <p>
+            The backend is using MySQL so you will have some work with the database. <br>
+            See the following section.
+        </p>
+
+        <h3>How to install / integrate with my site?</h3>
+        <p>
+            Download it from GitHub
+            Create the database based on: .....  
+            Fill in your MySQL credentials what you can 
+            Theming.
+        </p>
+
+        <h3>Important things I have to watch out for?</h3>
+        <p>
+            File uploading is only safe when your server is configured properly. 
+            When you are using Apache you must always ensure that .htaccess 
+            in the directories are working. Upload a sample script file to see if its 
+            interpreted by the your server. ...  You can even move outside from the public_html 
+            folder you have to rewrite the upload path inside the server.
+        </p>
+
+        <h3>What kind of options available?</h3>    
+        <p>
+            Because this script is built upon the well known jQuery-File-Upload plugin you can use 
+            it's <a href="https://github.com/blueimp/jQuery-File-Upload/wiki/Options">options</a>, but before you change anything you should know what you are doing, 
+            so always read about it first before you modify some options.<br>
+            In HTML5Uploader the images are not processed at all. 
+            Neither in client nor server side. So you can't use the image 
+            related options unless you enable (rewite a script a bit) image processing in client/server side..
+        </p>
+
+        <h3>More details on 'resumable' uploads?</h3>
+        <p>
+            Well, by default the script will slice up the files and these small 
+            chunks will be sent to the server one by one. So let's call this 'chunking'. 
+            These parts will be merged on the server side.
+        </p>   
+            <p>What are the advantages of this:</p> 
+                <ul>
+                    <li>
+                        If you slice up the files there will be no memory limits. 
+                        You can even upload GB-s of data theoretically. 
+                        It's useful when you need to upload bigger files to a shared server 
+                        (where you can't touch php.ini).
+                    </li>
+                    <li>
+                        Another useful aspect of chunking is it's resumable, 
+                        which means if you have a power outage during the file upload, 
+                        or just close the browser / tab, it will simply continue the uploading process 
+                        from the latest chunk when you drop the same file(s).
+                    </li>
+                </ul>
+        <p>
+            How is this achieved?<br>
+            In short: with the Javascript Blob object. This object has a slice() method. For further reference about the API see the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Blob">MDN article</a> or the official <a href="http://www.w3.org/TR/FileAPI/#dfn-Blob">w3</a> description about this topic.
+        </p>
+    </div>
+
+      <div class="inner" style="text-align: center; margin-bottom: 20px; margin-top: 200px;">
+          <img src="/assets/img/forgotten-bear.png" alt="Forgotten bear">
+      </div>  
+    
+    <footer>
+        <div class="inner">
+            <p>Created by <a href="http://filkor.org" target="_blank">filkor</a>.</p>
+        </div>
+    </footer>
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+        var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src='http://www.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+
+</body>
+</html>

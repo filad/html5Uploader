@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5|Uploader</title>
+    <link rel="stylesheet" href="/assets/css/normalize.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/assets/css/HTML5Uploader/defaultTheme.css">
+</head>
+<body>  
+    <header>
+        <div class="inner clearfix">
+            <div class="logo">
+                <a href="/">
+                    <img src="/assets/img/light-3.png" alt="">
+                </a>
+            </div>
+            
+
+            <!-- Begin Menu -->
+            <nav id="menu" class="menu">
+                <ul id="tiny">
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="FAQ.html">FAQ</a></li>
+                    <li><a href="download.html">Download</a></li>
+                </ul>
+            </nav>
+            <!-- End Menu -->
+        </div>
+    </header>
+
+    <div class="banner-container">
+        <div>
+            <div class="banner-text">
+                <h1>A free HTML5 upload widget.</h1>
+                <h2>- Optional MySQL backend</h2>
+                <h2>- Resumable uploads by default</h2>
+                <h2>- Compact, modern look</h2>
+                <h2 style="font-size: 18px;">Read the <a href="/FAQ">FAQ</a> for more info.</h2>
+                <p>
+                    <button href="" id="tryitbutton" class="button pink-to-white">Try it below</button>
+                </p>
+            </div>
+
+            <img src="/assets/img/showcase_1.png" alt="">
+            <div class="clear"></div>
+        </div>  
+    </div>
+
+    <form id="fileupload" class="HTML5Uploader" method="POST" action="/server/php/" enctype="multipart/form-data">
+        <div class="drop-wrapper">
+            <div id="dropzone" class="dropzone">
+                <h1>Drop Zone</h1>
+                <p>
+                    Drop your files here. This is only a demo, your files will be deleted after an hour. 
+                </p>
+                    <span id="browsebutton" class="fileinput-button button gray" href="">
+                        Browse..
+                        <input type="file" id="fileinput" name="files[]" class="fileinput" multiple />
+                    </span>
+            </div>
+        </div>     
+
+        <!-- upload ui -->
+        <div class="upload-wrapper">
+            <div class="info-wrapper" id="info-wrapper">
+
+                <div title="Remaining time" class="time-info">
+                    <i class="icon-clock"></i>
+                    <span>00:00:00</span>
+                </div>
+
+                <div title="Uploading speed" class="speed-info">
+                    0 KB/s
+                </div>
+
+                <button id="start-button" class="button pinkish" type="submit">Start Upload</button>
+                <div style="clear:both;"></div>
+            </div>
+
+            <ul id="files" class="files">
+
+            </ul>
+            
+    
+           <div class="add-more fileinput-button hidden" id="add-more-button">
+               <i class="icon-plus"></i> Add more files..
+               <!-- second input form, it works well with the other -->
+               <input type="file" name="files[]" class="" multiple />
+           </div> 
+        </div> <!-- upload-wrapper -->
+    </form>
+      <div class="inner" style="text-align: center; margin-bottom: 20px; margin-top: 200px;">
+          <img src="/assets/img/forgotten-bear.png" alt="Forgotten bear">
+      </div>  
+    
+    <footer>
+        <div class="inner">
+            <p>Created by <a href="http://filkor.org" target="_blank">filkor</a></p>
+        </div>
+    </footer>
+
+    <script id="template-upload" type="text/x-handlebars-template">
+        {{#each files}}
+            <li class="file-item">
+                <div class="first">
+                    <span class="top">
+                        <span class="filename">{{shortenName name}}</span>
+                        <a href="#" class="download-link" target="_blank">
+                            <i class="icon-download"></i>
+                        </a>
+                    </span>
+                    <span class="cancel-single"><i class="icon-cancel"></i></span>
+                    <span class="pause"><i class="icon-pause"></i></span>
+                    {{#if error}}
+                    <div class="error">
+                        <i class="icon-block icon"></i>
+                        <span>Error: </span>
+                        <span>{{error}}</span>
+                    </div>
+                    {{/if}}
+                </div>
+                <div class="second">
+                    <span class="filesize">{{formatFileSize size}}</span>
+                    <div class="progress-wrap">
+                        <div class="progress">
+                                <div class="bar" style="width:0%"></div>       
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="aside">
+                    <div class="success-tick">
+                        <i class="icon-ok"></i>
+                    </div>
+                </div>
+            </li>
+        {{/each}}
+    </script>
+
+
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+    
+    <!-- handlebars -->
+    <script src="/assets/js/handlebars.min.js"></script>
+    
+    <!-- HTML5Uploader -->
+    <script src="/assets/js/jquery.ui.widget.js"></script>
+    <script src="/assets/js/vendor/bootstrap-transition.js"></script>
+    <script src="/assets/js/jquery.iframe-transport.js"></script>
+    <script src="/assets/js/jquery.fileupload.js"></script>
+    <script src="/assets/js/jquery.fileupload-process.js"></script>
+    <script src="/assets/js/jquery.fileupload-validate.js"></script>
+    <script src="/assets/js/HTML5Uploader.js"></script>
+    <script src="/assets/js/main.js"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+        var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src='http://www.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+
+</body>
+</html>
