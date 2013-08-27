@@ -1,15 +1,14 @@
 $(function () {
     'use strict';
 
+    //set up our file upload script
     $("#fileupload").html5Uploader({
         url: '/server/php/',
-        maxFileSize: 1024*1024*15 // 15MB   
+        maxFileSize: 1024*1024*20 // 20MB   
     });
 
     // Load existing files and set user direcory
     $.ajax({
-        // Uncomment the following to send cross-domain cookies:
-        //xhrFields: {withCredentials: true},
         url: $('#fileupload').html5Uploader('option', 'url'),
         dataType: 'json',
         context: $('#fileupload')[0]

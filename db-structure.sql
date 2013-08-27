@@ -9,5 +9,5 @@ CREATE TABLE IF NOT EXISTS `files` (
   `user_id` varchar(255) COLLATE utf8_bin NOT NULL,
   `uploaded_time` int(11) NOT NULL,
   UNIQUE KEY `id` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1;
 

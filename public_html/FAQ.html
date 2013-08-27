@@ -39,14 +39,15 @@
         <h3>What is this?</h3>
         <p>
             This is a file upload script.<br>
-            You can find it's <a href="">!!!!!!!!!!!!!!!source code on GitHub</a>.
+            You can find it on Github:  <a target="_blank" href="https://github.com/filad/html5Uploader">https://github.com/filad/html5Uploader</a>.
         </p>
         <p>
             I needed a script which is resumable by default, easily customizable (you can make 'themes') 
             and has a MySQL backend. <br>
-            So I combined the powerful <a href="https://github.com/blueimp/jQuery-File-Upload">jQuery-File-Upload plugin</a> with my own ideas.   
-            <br>Now I share it here. 
+            So I combined the powerful <a href="https://github.com/blueimp/jQuery-File-Upload">jQuery-File-Upload plugin</a> with my own ideas.
+
         </p>
+        <br>
         <p>
             Some basics about this uploader: <br>
             Only Javascript is used on the client side, no Flash or Java is required. <br>
@@ -54,10 +55,10 @@
         <p>
             All uploads are resumable (by default) which means you don't have to restart the whole uploading process after a connection loss, just drop the same files again and continue where you left. 
             <br>
-            To try it, drop a bigger file or files, start upload, 
+            To try it, drop a bigger file or files, 
             then - during uploading - close your browser, 
-            your upload will continue when you start it again. <br>
-            In case of older browsers, it will fallback to the old method 
+            your upload will continue when you drop the same files and start upload them again. <br>
+            In case of older browsers, it will fallback to the old method  
             (it will upload the files in one big chunk).
         </p>
         <p>
@@ -67,19 +68,28 @@
 
         <h3>How to install / integrate with my site?</h3>
         <p>
-            Download it from GitHub
-            Create the database based on: .....  
-            Fill in your MySQL credentials what you can 
-            Theming.
+            Download it from GitHub (<a href="https://github.com/filad/html5Uploader">source</a>).
         </p>
+        <p>
+            Create a database. You will find the sample database structure in <i>db-structure.sql</i>
+        </p>
+        <p>
+            Fill in your database credentials. Look at the <i>mysql-credentials-sample.php</i> for an example. The server is using <a href="http://www.php.net/manual/en/intro.pdo.php">PDO</a> for absraction. (MySQL is not the only option.)
+        </p>
+        <p>
+            If you want make a different 'theme' for the uploader, the easiest way would be to create a new .css file inside 
+            <i>public_html/assets/css/HTML5Uploader</i>. (You see there is already a <i>-defaultTheme.css-</i> stylesheet)
+        </p>
+        
 
         <h3>Important things I have to watch out for?</h3>
         <p>
             File uploading is only safe when your server is configured properly. 
             When you are using Apache you must always ensure that .htaccess 
-            in the directories are working. Upload a sample script file to see if its 
-            interpreted by the your server. ...  You can even move outside from the public_html 
-            folder you have to rewrite the upload path inside the server.
+            in the directories are working. Upload a sample php script file to see if it's 
+            interpreted by your server. <br>
+            A better option is to move your <i>/files</i> folder outside from the public_html 
+            (for this you also have to rewrite the upload path inside the server).
         </p>
 
         <h3>What kind of options available?</h3>    
@@ -95,7 +105,7 @@
         <h3>More details on 'resumable' uploads?</h3>
         <p>
             Well, by default the script will slice up the files and these small 
-            chunks will be sent to the server one by one. So let's call this 'chunking'. 
+            chunks will be sent to the server one by one. Let's call this 'chunking'. 
             These parts will be merged on the server side.
         </p>   
             <p>What are the advantages of this:</p> 
