@@ -4,7 +4,7 @@ $(function () {
     //set up our file upload script
     $("#fileupload").html5Uploader({
         url: 'server/php/',
-        maxFileSize: 1024*1024*1024*20 // 20GB
+        maxFileSize: 1024*1024*20 // 20MB
     });
 
     // Load existing files and set user direcory
