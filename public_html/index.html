@@ -8,20 +8,20 @@
     <title>HTML5|Uploader</title>
     <meta name="description" content="Resumable uploads with only Javascript and PHP. HTML5|Uploader.">
     <meta name="keywords" content="file upload, resumable, uploader, modern file upload, HMTL5">
-    <link rel="stylesheet" href="/assets/css/normalize.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/assets/css/HTML5Uploader/defaultTheme.css">
+    <link rel="stylesheet" href="assets/css/HTML5Uploader/defaultTheme.css">
 </head>
-<body>  
+<body>
     <header>
         <div class="inner clearfix">
             <div class="logo">
                 <a href="/">
-                    <img src="/assets/img/light-3.png" alt="">
+                    <img src="assets/img/light-3.png" alt="">
                 </a>
             </div>
-            
+
 
             <!-- Begin Menu -->
             <nav id="menu" class="menu">
@@ -48,25 +48,25 @@
                 </p>
             </div>
 
-            <img src="/assets/img/showcase_1.png" alt="">
+            <img src="assets/img/showcase_1.png" alt="">
             <div class="clear"></div>
-        </div>  
+        </div>
     </div>
 
-    <form id="fileupload" class="HTML5Uploader" method="POST" action="/server/php/" enctype="multipart/form-data">
+    <form id="fileupload" class="HTML5Uploader" method="POST" action="server/php/" enctype="multipart/form-data">
         <div class="drop-wrapper">
             <div id="dropzone" class="dropzone">
                 <h1>Drop Zone</h1>
                 <p>
                     Drop your files here. This is only a demo, your files will be deleted after an hour.<br>
-                    Max allowed file size is 20MB.
+                    Max allowed file size is 20GB.
                 </p>
                     <span id="browsebutton" class="fileinput-button button gray" href="">
                         Browse..
                         <input type="file" id="fileinput" name="files[]" class="fileinput" multiple />
                     </span>
             </div>
-        </div>     
+        </div>
 
         <!-- upload ui -->
         <div class="upload-wrapper">
@@ -88,19 +88,19 @@
             <ul id="files" class="files">
 
             </ul>
-            
-    
+
+
            <div class="add-more fileinput-button hidden" id="add-more-button">
                <i class="icon-plus"></i> Add more files..
                <!-- second input form, it works well with the other -->
                <input type="file" name="files[]" class="" multiple />
-           </div> 
+           </div>
         </div> <!-- upload-wrapper -->
     </form>
       <div class="inner" style="text-align: center; margin-bottom: 20px; margin-top: 200px;">
-          <img src="/assets/img/forgotten-bear.png" alt="Forgotten bear">
-      </div>  
-    
+          <img src="assets/img/forgotten-bear.png" alt="Forgotten bear">
+      </div>
+
     <footer>
         <div class="inner">
             <p>Created by <a href="http://filkor.org" target="_blank">filkor</a></p>
@@ -131,7 +131,7 @@
                     <span class="filesize">{{formatFileSize size}}</span>
                     <div class="progress-wrap">
                         <div class="progress">
-                                <div class="bar" style="width:0%"></div>       
+                                <div class="bar" style="width:0%"></div>
                         </div>
                     </div>
                     <div class="clear"></div>
@@ -149,20 +149,20 @@
 
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-    
+    <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+
     <!-- handlebars -->
-    <script src="/assets/js/handlebars.min.js"></script>
-    
+    <script src="assets/js/handlebars.min.js"></script>
+
     <!-- HTML5Uploader -->
-    <script src="/assets/js/jquery.ui.widget.js"></script>
-    <script src="/assets/js/vendor/bootstrap-transition.js"></script>
-    <script src="/assets/js/jquery.iframe-transport.js"></script>
-    <script src="/assets/js/jquery.fileupload.js"></script>
-    <script src="/assets/js/jquery.fileupload-process.js"></script>
-    <script src="/assets/js/jquery.fileupload-validate.js"></script>
-    <script src="/assets/js/HTML5Uploader.js"></script>
-    <script src="/assets/js/main.js"></script>
+    <script src="assets/js/jquery.ui.widget.js"></script>
+    <script src="assets/js/vendor/bootstrap-transition.js"></script>
+    <script src="assets/js/jquery.iframe-transport.js"></script>
+    <script src="assets/js/jquery.fileupload.js"></script>
+    <script src="assets/js/jquery.fileupload-process.js"></script>
+    <script src="assets/js/jquery.fileupload-validate.js"></script>
+    <script src="assets/js/HTML5Uploader.js"></script>
+    <script src="assets/js/main.js"></script>
 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

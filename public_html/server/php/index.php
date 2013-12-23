@@ -15,11 +15,11 @@ error_reporting(E_ALL | E_STRICT);
 
 require('UploadHandler-mysql.php');
 
-// 
+//
 // Ideally you should move your MySQL credentials outside of the public_html directory
 // because of security reasons.
-// 
-require($_SERVER['DOCUMENT_ROOT'] . '../mysql-credentials.php');
+//
+require(dirname(__FILE__) . '/../../../mysql-credentials.php');
 
 
 //the $dsn, $dbUsername, $dbPassword below come from the external mysql credentials.php
