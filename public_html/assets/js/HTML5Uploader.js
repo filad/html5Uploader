@@ -1,8 +1,8 @@
 /*
- * Modern Uploader
- * https://github.com/filad/Modernuploader
+ * HTML5Uploader
+ * https://github.com/filad/html5Uploader
  *
- * Copyright 2013, Adam Filkor
+ * Copyright 2014, Adam Filkor
  * http://filkor.org
  *
  * Licensed under the MIT license:
