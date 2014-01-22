@@ -6,20 +6,20 @@
 <head>
     <meta charset="UTF-8">
     <title>HTML5|Uploader</title>
-    <link rel="stylesheet" href="/assets/css/normalize.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/assets/css/HTML5Uploader/defaultTheme.css">
+    <link rel="stylesheet" href="assets/css/HTML5Uploader/defaultTheme.css">
 </head>
-<body>  
+<body>
     <header>
         <div class="inner clearfix">
             <div class="logo">
                 <a href="/">
-                    <img src="/assets/img/light-3.png" alt="">
+                    <img src="assets/img/light-3.png" alt="">
                 </a>
             </div>
-            
+
 
             <!-- Begin Menu -->
             <nav id="menu" class="menu">
@@ -34,7 +34,7 @@
     </header>
 	<div class="faq inner">
         <h2 class="aligncenter">FAQ / Documentation</h2>
-        <span class="description aligncenter">HTML5Uploader is a file upload script with resumable 
+        <span class="description aligncenter">HTML5Uploader is a file upload script with resumable
             feature and MySQL backend support</span>
 
         <h3>What is this?</h3>
@@ -43,7 +43,7 @@
             You can find it on Github:  <a target="_blank" href="https://github.com/filad/html5Uploader">https://github.com/filad/html5Uploader</a>.
         </p>
         <p>
-            I needed a script which is resumable by default, easily customizable (you can make 'themes') 
+            I needed a script which is resumable by default, easily customizable (you can make 'themes')
             and has a MySQL backend. <br>
             So I combined the powerful <a href="https://github.com/blueimp/jQuery-File-Upload">jQuery-File-Upload plugin</a> with my own ideas.
 
@@ -55,12 +55,12 @@
             Only Javascript is used on the client side, no Flash or Java is required. <br>
         </p>
         <p>
-            All uploads are resumable (by default) which means you don't have to restart the whole uploading process after a connection loss, just drop the same files again and continue where you left. 
+            All uploads are resumable (by default) which means you don't have to restart the whole uploading process after a connection loss, just drop the same files again and continue where you left.
             <br>
-            To try it, drop a bigger file or files, 
-            then - during uploading - close your browser, 
+            To try it, drop a bigger file or files,
+            then - during uploading - close your browser,
             your upload will continue when you drop the same files and start upload them again. <br>
-            In case of older browsers, it will fallback to the old method  
+            In case of older browsers, it will fallback to the old method
             (it will upload the files in one big chunk).
         </p>
         <p>
@@ -79,49 +79,49 @@
             Fill in your database credentials. Look at the <i>mysql-credentials-sample.php</i> for an example. The server is using <a href="http://www.php.net/manual/en/intro.pdo.php">PDO</a> for absraction. (MySQL is not the only option.)
         </p>
         <p>
-            If you want make a different 'theme' for the uploader, the easiest way would be to create a new .css file inside 
+            If you want make a different 'theme' for the uploader, the easiest way would be to create a new .css file inside
             <i>public_html/assets/css/HTML5Uploader</i>. (You see there is already a <i>-defaultTheme.css-</i> stylesheet)
         </p>
-        
+
 
         <h3>Important things I have to watch out for?</h3>
         <p>
-            File uploading is only safe when your server is configured properly. 
-            When you are using Apache you must always ensure that .htaccess 
-            in the directories are working. Upload a sample php script file to see if it's 
+            File uploading is only safe when your server is configured properly.
+            When you are using Apache you must always ensure that .htaccess
+            in the directories are working. Upload a sample php script file to see if it's
             interpreted by your server. <br>
-            A better option is to move your <i>/files</i> folder outside from the public_html 
+            A better option is to move your <i>/files</i> folder outside from the public_html
             (for this you also have to rewrite the upload path inside the server).
         </p>
 
-        <h3>What kind of options available?</h3>    
+        <h3>What kind of options available?</h3>
         <p>
-            Because this script is built upon the well known jQuery-File-Upload plugin you can use 
-            it's <a href="https://github.com/blueimp/jQuery-File-Upload/wiki/Options">options</a>, but before you change anything you should know what you are doing, 
+            Because this script is built upon the well known jQuery-File-Upload plugin you can use
+            it's <a href="https://github.com/blueimp/jQuery-File-Upload/wiki/Options">options</a>, but before you change anything you should know what you are doing,
             so always read about it first before you modify some options.<br>
-            In HTML5Uploader the images are not processed at all. 
-            Neither in client nor server side. So you can't use the image 
+            In HTML5Uploader the images are not processed at all.
+            Neither in client nor server side. So you can't use the image
             related options unless you enable (rewite a script a bit) image processing in client/server side..
         </p>
 
         <h3>More details on 'resumable' uploads?</h3>
         <p>
-            Well, by default the script will slice up the files and these small 
-            chunks will be sent to the server one by one. Let's call this 'chunking'. 
+            Well, by default the script will slice up the files and these small
+            chunks will be sent to the server one by one. Let's call this 'chunking'.
             These parts will be merged on the server side.
-        </p>   
-            <p>What are the advantages of this:</p> 
+        </p>
+            <p>What are the advantages of this:</p>
                 <ul>
                     <li>
-                        If you slice up the files there will be no memory limits. 
-                        You can even upload GB-s of data theoretically. 
-                        It's useful when you need to upload bigger files to a shared server 
+                        If you slice up the files there will be no memory limits.
+                        You can even upload GB-s of data theoretically.
+                        It's useful when you need to upload bigger files to a shared server
                         (where you can't touch php.ini).
                     </li>
                     <li>
-                        Another useful aspect of chunking is it's resumable, 
-                        which means if you have a power outage during the file upload, 
-                        or just close the browser / tab, it will simply continue the uploading process 
+                        Another useful aspect of chunking is it's resumable,
+                        which means if you have a power outage during the file upload,
+                        or just close the browser / tab, it will simply continue the uploading process
                         from the latest chunk when you drop the same file(s).
                     </li>
                 </ul>
@@ -132,9 +132,9 @@
     </div>
 
       <div class="inner" style="text-align: center; margin-bottom: 20px; margin-top: 200px;">
-          <img src="/assets/img/forgotten-bear.png" alt="Forgotten bear">
-      </div>  
-    
+          <img src="assets/img/forgotten-bear.png" alt="Forgotten bear">
+      </div>
+
     <footer>
         <div class="inner">
             <p>Created by <a href="http://filkor.org" target="_blank">filkor</a>.</p>
