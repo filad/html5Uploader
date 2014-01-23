@@ -81,6 +81,7 @@
     line-height: 24px;
     font-weight: 400;
     letter-spacing: 0.4px;
+    word-spacing: 0px;
 }
 
 .HTML5Uploader .upload-wrapper {
