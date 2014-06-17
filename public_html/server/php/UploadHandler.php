@@ -217,10 +217,13 @@ class UploadHandler
 
     protected function get_file_size($file_path, $clear_stat_cache = false) {
         if ($clear_stat_cache) {
-            clearstatcache(true, $file_path);
+            if (version_compare(PHP_VERSION, '5.3.0') >= 0) {
+                clearstatcache(true, $file_path);
+            } else {
+                clearstatcache();
+            }
         }
         return $this->fix_integer_overflow(filesize($file_path));
-
     }
 
     protected function is_valid_file_object($file_name) {
