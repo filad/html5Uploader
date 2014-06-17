@@ -6,6 +6,9 @@
 <head>
     <meta charset="UTF-8">
     <title>HTML5|Uploader</title>
+    <meta property="og:image" content="http://html5uploader.filkor.org/assets/img/200x200icon.png">
+    <meta property="og:title" content="HTML5Uploader">
+    <meta property="og:description" content="Resumable upload script with MySQL backend.">
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,900' rel='stylesheet' type='text/css'>
@@ -68,7 +71,7 @@
             See the following section.
         </p>
 
-        <h3>How to install / integrate with my site?</h3>
+        <h3>How to install / integrate it with my site?</h3>
         <p>
             Download it from GitHub (<a href="https://github.com/filad/html5Uploader">source</a>).
         </p>
@@ -76,7 +79,7 @@
             Create a database. You will find the sample database structure in <i>db-structure.sql</i>
         </p>
         <p>
-            Fill in your database credentials. Look at the <i>mysql-credentials-sample.php</i> for an example. The server is using <a href="http://www.php.net/manual/en/intro.pdo.php">PDO</a> for absraction. (MySQL is not the only option.)
+            Fill in your database credentials. Look at the <i>mysql-credentials-sample.php</i> for an example (rename it to <i>mysql-credentials.php</i> when you use it live).  The server is using <a href="http://www.php.net/manual/en/intro.pdo.php">PDO</a> for absraction. (MySQL is not the only option.)
         </p>
         <p>
             If you want make a different 'theme' for the uploader, the easiest way would be to create a new .css file inside
@@ -119,7 +122,7 @@
                         (where you can't touch php.ini).
                     </li>
                     <li>
-                        Another useful aspect of chunking is it's resumable,
+                        Another useful aspect of chunking is the resumable feature,
                         which means if you have a power outage during the file upload,
                         or just close the browser / tab, it will simply continue the uploading process
                         from the latest chunk when you drop the same file(s).
