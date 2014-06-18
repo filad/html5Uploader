@@ -1,6 +1,6 @@
 <?php
 /*
- * HTML5Uploader
+ * HTML5Uploader MySQL PHP Class 1.1
  * https://github.com/filad/html5Uploader
  *
  * Copyright 2014, Adam Filkor
@@ -163,6 +163,24 @@ class UploadHandlerMYSQL extends UploadHandler
         return false;
     }
 
+    protected function is_file_exist_in_db($file) {
+        $answer = array();
+        $user_id = $this->get_user_id();
+
+        $stmt = $this->pdo->prepare('SELECT * FROM files WHERE file_name = :file_name AND user_id = :user_id');
+        $stmt->execute(array(
+                ':file_name' => $file->name,
+                ':user_id' => $user_id
+        ));
+
+        if ($stmt->rowCount() > 0) {
+                $row = $stmt->fetch();
+                $answer[0] = $row['uploaded_bytes'];
+                $answer[1] = $row['file_size'];
+        }
+        return $answer;
+    }
+
     protected function handle_file_upload($uploaded_file, $name, $size, $type, $error,
             $index = null, $content_range = null) {
         $file = new stdClass();
@@ -175,6 +193,14 @@ class UploadHandlerMYSQL extends UploadHandler
             $this->set_file_delete_properties($file);
             $file->url = $this->get_download_url($file->name);
             return $file;
+        }
+
+        $check_file_exist = $this->is_file_exist_in_db($file);
+        if (is_array($check_file_exist) && (count($check_file_exist) > 0)) {
+            if ($content_range[1] < $check_file_exist[0]) {
+                $file->size = $check_file_exist[0];
+                return $file;
+            }
         }
 
         if ($this->validate($uploaded_file, $file, $error, $index)) {
